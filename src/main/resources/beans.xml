@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+     bean definitions here
+    <bean name="rrr" class="io.pragra.learning.feb25_ioc.Movie" init-method="setup" destroy-method="destroy" scope="singleton">
+        <constructor-arg name="movieId" value="1"></constructor-arg>
+        <constructor-arg name="movieName" value="RRR"></constructor-arg>
+        <constructor-arg name="releaseYear" value="2022"></constructor-arg>
+        <constructor-arg name="genre" value="Action"></constructor-arg>
+        <constructor-arg name="cast" ref="srk"></constructor-arg>
+    </bean>
+
+    <bean name="srk" class="io.pragra.learning.feb25_ioc.Cast">
+        <property name="firstName" value="asdsad"></property>
+        <property name="lastName" value="werewr"></property>
+    </bean>
+
+
+    <bean name="MI" class="io.pragra.learning.feb25_ioc.Movie">
+        <property name="movieId" value="5"></property>
+        <constructor-arg name="movieName" value="MI"></constructor-arg>
+        <constructor-arg name="releaseYear" value="2022"></constructor-arg>
+        <constructor-arg name="genre" value="Action"></constructor-arg>
+    </bean>
+
+
+</beans>
