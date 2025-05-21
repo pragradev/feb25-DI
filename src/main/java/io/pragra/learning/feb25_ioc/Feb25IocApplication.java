@@ -15,28 +15,39 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Feb25IocApplication {
 
 	public static void main(String[] args) {
+
+		ConfigurableApplicationContext context = SpringApplication.run(Feb25IocApplication.class, args);
+		MovieService movieService = context.getBean(MovieService.class);
+		movieService.displayAllMovies();
+
+
+
+
+
+
 		//Movie rrr = new Movie(1,"RRR", 2022, "Action");
 
 		//ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
 		//ConfigurableApplicationContext context = new AnnotationConfigApplicationContext("io.pragra.learning.feb25_ioc.config");
 
-		ConfigurableApplicationContext context = SpringApplication.run(Feb25IocApplication.class, args);
+
+
 
 		//Movie rrr = context.getBean("rrr",Movie.class);
 
-		Cast cast1 = context.getBean(Cast.class);
-		Cast cast2 = context.getBean(Cast.class);
-		Cast cast3 = context.getBean(Cast.class);
-		Cast cast4 = context.getBean(Cast.class);
-		System.out.println(cast1);
-		System.out.println(cast2);
-		System.out.println(cast3);
-		System.out.println(cast4);
-		Cast cast = new Cast();
-		System.out.println(cast);
-		MovieService movieService = context.getBean(MovieService.class);
-		System.out.println(movieService);
+//		Cast cast1 = context.getBean(Cast.class);
+//		Cast cast2 = context.getBean(Cast.class);
+//		Cast cast3 = context.getBean(Cast.class);
+//		Cast cast4 = context.getBean(Cast.class);
+//		System.out.println(cast1);
+//		System.out.println(cast2);
+//		System.out.println(cast3);
+//		System.out.println(cast4);
+//		Cast cast = new Cast();
+//		System.out.println(cast);
+//		MovieService movieService = context.getBean(MovieService.class);
+//		System.out.println(movieService);
 		//movieBO.populateRatingAndInsertMovie(rrr);
 
 

@@ -5,12 +5,37 @@ import io.pragra.learning.feb25_ioc.Movie;
 import io.pragra.learning.feb25_ioc.bo.MovieBO;
 import io.pragra.learning.feb25_ioc.bo.MovieService;
 import io.pragra.learning.feb25_ioc.dao.MovieDAO;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import javax.sql.DataSource;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 @Configuration
 public class AppConfig {
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource){
+        return new JdbcTemplate(dataSource);
+    }
+
+//    @Bean
+//    public DataSource dataSource(){
+//        DataSource dataSource = DataSourceBuilder
+//                .create()
+//                .url("jdbc:h2:mem:appdb")
+//                .username("sa")
+//                .password("sa123")
+//                .build();
+//
+//        return dataSource;
+//    }
 
     /*
     * <bean name="rrr" class="io.pragra.learning.feb25_ioc.Movie" init-method="setup" destroy-method="destroy">

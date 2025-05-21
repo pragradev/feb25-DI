@@ -11,17 +11,5 @@ public class MovieBO {
 
     MovieDAO movieDAO = new MovieDAO();
 
-    public void populateRatingAndInsertMovie(Movie movie){
-        System.out.println("Calling IMDB");
-        movieDAO.insertMovie(movie);
-        System.out.println("Inserting movie into database");
-    }
-    public void deleteRatingAndInsertMovie(Movie movie){
-        System.out.println("Calling IMDB");
-        System.out.println("Inserting movie into database");
-    }
-    public void updateRatingAndInsertMovie(Movie movie){
-        System.out.println("Calling IMDB");
-        System.out.println("Inserting movie into database");
-    }
+
 }

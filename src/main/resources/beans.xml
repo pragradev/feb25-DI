@@ -7,7 +7,7 @@
      bean definitions here
     <bean name="rrr" class="io.pragra.learning.feb25_ioc.Movie" init-method="setup" destroy-method="destroy" scope="singleton">
         <constructor-arg name="movieId" value="1"></constructor-arg>
-        <constructor-arg name="movieName" value="RRR"></constructor-arg>
+        <constructor-arg name="movieName" value="#{'RRR'.length()}"></constructor-arg>
         <constructor-arg name="releaseYear" value="2022"></constructor-arg>
         <constructor-arg name="genre" value="Action"></constructor-arg>
         <constructor-arg name="cast" ref="srk"></constructor-arg>
